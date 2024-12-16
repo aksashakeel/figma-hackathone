@@ -1,18 +1,37 @@
-import Image from 'next/image'
-import React from 'react'
-import Hero from './hero/page'
-import MeetShef from './meetchef/page'
+import Image  from "next/image"
+import Link from "next/link"
+export default function Blog(){
+    return(
 
-function page() {
-  return (
-    <div className='bg-black'>
-<Hero/>
-<MeetShef />
-<div className="  text-center justify-center items-center text-2xl m-1 mt-8 font-sans">
-        <h3 className=" text-[#FF9F0D] text-[32px] mb-4 ">Blog Posts</h3>
-        <h1 className="font-bold text-[48px] text-white"><span className="text-[#FF9F0D]">La</span>test News & Blogs</h1>
+    
+    <div>
+      {/* First Section: Image and Breadcrumb */}
+      <div className="relative font-[sans-serif]">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+        <Image
+          src="/images/banner.png"
+          alt="Banner Image"
+          width={1920}
+          height={410}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="min-h-[350px] relative z-50 h-full max-w-4xl mx-auto flex flex-col justify-center items-center text-center p-6">
+          <h2 className="text-white md:text-5xl text-3xl font-bold mb-8">
+            Blogs
+          </h2>
+          <div className="flex items-center space-x-2 text-white">
+            <Link href="/" className="text-white">Home</Link>
+            <span className="text-white"> &gt; </span>
+            <Link href="/Blog" className="text-orange-500">Blogs</Link>
+          </div>
+        </div>
       </div>
-      <section className=" body-font text-white">
+      <div className="text-center justify-center items-center text-2xl m-1 mt-8 font-sans">
+        <h3 className=" text-[#FF9F0D] text-[32px] mb-4 ">Blog Posts</h3>
+        <h1 className="font-bold text-[48px]"><span className="text-[#FF9F0D]">La</span>test News & Blogs</h1>
+      </div>
+      <section className=" body-font">
         <div className="container px-3 py-20 mx-auto">
           <div className="flex flex-wrap -m-4">
             <div className="p-4 md:w-1/3">
@@ -74,8 +93,7 @@ function page() {
       </section>
 
     </div>
-    
-  )
+  );
 }
 
-export default page
+    
